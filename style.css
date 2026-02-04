@@ -1,0 +1,97 @@
+:root {
+    --bg-color: #0a0a0c;
+    --card-bg: #16161a;
+    --accent-color: #00ff9d; /* Matrix/Cyber Green */
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a8;
+    --font-main: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    align-items: center;
+}
+
+.logo { font-family: var(--font-code); font-weight: bold; color: var(--accent-color); font-size: 1.5rem; }
+
+nav ul { display: flex; list-style: none; gap: 2rem; }
+
+nav a { text-decoration: none; color: var(--text-secondary); transition: 0.3s; font-size: 0.9rem; }
+
+nav a:hover { color: var(--accent-color); }
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero h1 { font-size: 4rem; font-family: var(--font-code); margin-bottom: 1rem; }
+
+.hero .tagline { color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.primary { background: var(--accent-color); color: #000; }
+.secondary { border: 1px solid var(--accent-color); color: var(--accent-color); }
+.btn:hover { opacity: 0.8; transform: translateY(-3px); }
+
+/* Grid Layout */
+.section { padding: 5rem 10%; }
+
+.section-title { margin-bottom: 3rem; font-size: 2rem; border-left: 4px solid var(--accent-color); padding-left: 15px; }
+
+.section-title span { color: var(--text-secondary); font-size: 1rem; font-weight: normal; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.card:hover { border-color: var(--accent-color); }
+
+.tech-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-code);
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+.dark-bg { background-color: #050505; }
