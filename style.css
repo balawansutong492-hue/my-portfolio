@@ -95,3 +95,47 @@ nav a:hover { color: var(--accent-color); }
 }
 
 .dark-bg { background-color: #050505; }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the navigation links vertically */
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* 2. Shrink the hero text so it doesn't overflow */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    /* 3. Stack the buttons */
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .btn {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* 4. Ensure sections have better padding on small screens */
+    .section {
+        padding: 3rem 5%;
+    }
+}
