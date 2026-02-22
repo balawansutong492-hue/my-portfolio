@@ -3,57 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balawan Sutong | Portfolio</title>
+    <title>Balawan Sutong · music & code</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
-        <div class="logo">BS.DEV</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#music">Music</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- Sticky navigation (unchanged) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="#home">Balawan.</a></div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#skills">My Skills</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="connect-link">Let's Connect</a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </nav>
 
-    <header id="home" class="hero">
-        <h1>Balawan Sutong</h1>
-        <p class="tagline">B.Sc IT Aspirant | Music Producer | NIOS Student</p>
-        <p class="summary">
-            Completing Class 12 via NIOS (Exams: Sept/Oct 2026). 
-            Self-taught in Python, C++, and Web Dev. 
-            Passionate about AI & Cybersecurity.
-        </p>
-        <div class="hero-btns">
-            <a href="https://youtube.com/@DjBLWN" class="btn primary" target="_blank">YouTube (DJ BLWN)</a>
-            <a href="https://github.com/balawansutong492-hue" class="btn secondary" target="_blank">GitHub</a>
-        </div>
-    </header>
-
-    <section id="music" class="section">
-        <h2 class="section-title">The Studio <span>(Remixes)</span></h2>
-        <div class="video-grid">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    <main>
+        <!-- HERO with background image (behind text) -->
+        <section id="home" class="hero container">
+            <div class="hero-bg" id="hero-bg" style="background-image: url('');"></div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span id="hero-name">Balawan Sutong</span></h1>
+                <div class="hero-sub">Class 12 NIOS Student & Music Producer</div>
+                <p class="hero-tagline">I create music, build simple games, and explore technology.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
             </div>
+        </section>
+
+        <!-- ABOUT ME (card) with profile image (unchanged) -->
+        <section id="about" class="container" style="scroll-margin-top: 80px;">
+            <div class="about-grid">
+                <div class="about-img">
+                    <div class="image-placeholder">
+                        <img id="profile-img" src="https://ui-avatars.com/api/?name=Balawan+Sutong&size=220" alt="profile" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p id="about-text">I'm a class 12 NIOS student, music producer, and game developer with a passion for technology. I create beats using FL Studio Mobile and develop simple, fun games. Always eager to learn new skills and explore the latest in tech.</p>
+                    <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY SKILLS (dynamic) -->
+        <section id="skills" class="container" style="margin-top: 100px; scroll-margin-top: 80px;">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid" id="skills-container"></div>
+            <div style="text-align: right; margin-top: 20px;">
+                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO (dynamic with images) -->
+        <section id="portfolio" class="container" style="margin-top: 100px; scroll-margin-top: 80px;">
+            <h2 class="section-title">My Portfolio</h2>
+            <div class="portfolio-grid" id="portfolio-container"></div>
+            <div class="view-all">
+                <a href="#">View All Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- CONTACT (unchanged except dynamic email/phone/social) -->
+        <section id="contact" class="container" style="margin-top: 100px; scroll-margin-top: 80px;">
+            <div class="contact-section">
+                <h2 class="section-title" style="margin-bottom: 40px;">Let's Connect!</h2>
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email address" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="4" placeholder="Tell me about your project or just say hi..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="border-radius: 40px; border: none;">Send message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <p class="contact-note">Interested in music, games, or tech? Let's chat!</p>
+                        <div class="social-icons" id="social-links"></div>
+                        <p style="color: var(--text-muted);">
+                            <i class="fas fa-envelope" style="color: var(--yellow-accent);"></i> <span id="contact-email">balawansutong492@gmail.com</span><br>
+                            <i class="fas fa-phone-alt" style="color: var(--yellow-accent);"></i> <span id="contact-phone">6002920884</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER with current year -->
+        <footer class="footer container">
+            <div id="copyright">© <span id="current-year"></span> Balawan Sutong. All Rights Reserved.</div>
+            <div class="social-mini" id="footer-social"></div>
+        </footer>
+    </main>
+
+    <!-- ADMIN PANEL (password protected) -->
+    <div id="admin-login-overlay" class="admin-overlay">
+        <div class="admin-panel" style="max-width: 400px;">
+            <h3>Admin Login</h3>
+            <input type="password" id="login-password" placeholder="Enter password">
+            <button id="login-submit" class="btn btn-primary" style="margin-top: 15px;">Login</button>
+            <p id="login-error" style="color: red; margin-top: 10px;"></p>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="section dark-bg">
-        <h2 class="section-title">Contact</h2>
-        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn primary">Send Message</button>
-        </form>
-    </section>
+    <div id="admin-overlay" class="admin-overlay">
+        <div class="admin-panel">
+            <h3>Admin Panel <button id="close-admin" class="btn-close">&times;</button></h3>
+            <form id="admin-form">
+                <fieldset>
+                    <legend>Hero Background</legend>
+                    <label>Background Image URL</label>
+                    <input type="url" id="admin-hero-bg" placeholder="https://...">
+                </fieldset>
 
-    <footer>
-        <p>&copy; 2026 Balawan Sutong.</p>
-    </footer>
+                <fieldset>
+                    <legend>Profile</legend>
+                    <label>Profile Image URL</label>
+                    <input type="url" id="admin-img" placeholder="https://...">
+                    <label>About Text</label>
+                    <textarea id="admin-about" rows="3"></textarea>
+                </fieldset>
 
+                <fieldset>
+                    <legend>Skills (add/remove)</legend>
+                    <div id="skills-admin"></div>
+                    <button type="button" id="add-skill" class="btn btn-outline" style="margin-top: 10px;">+ Add Skill</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Portfolio (add/remove)</legend>
+                    <div id="portfolio-admin"></div>
+                    <button type="button" id="add-portfolio" class="btn btn-outline" style="margin-top: 10px;">+ Add Portfolio Item</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact</legend>
+                    <label>Email</label>
+                    <input type="email" id="admin-email">
+                    <label>Phone</label>
+                    <input type="text" id="admin-phone">
+                    <label>Instagram URL</label>
+                    <input type="url" id="admin-insta">
+                    <label>Facebook URL</label>
+                    <input type="url" id="admin-fb">
+                    <label>YouTube URL</label>
+                    <input type="url" id="admin-yt">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Change Admin Password</legend>
+                    <label>New Password</label>
+                    <input type="password" id="admin-new-password" placeholder="Enter new password">
+                    <label>Confirm Password</label>
+                    <input type="password" id="admin-confirm-password" placeholder="Confirm new password">
+                </fieldset>
+
+                <button type="button" id="save-admin" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="admin-toggle" class="admin-toggle"><i class="fas fa-cog"></i> Admin</button>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
